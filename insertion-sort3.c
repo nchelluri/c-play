@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "vector.h"
+#include "vector/vector.h"
 
 #define MAX_ITEMS 100000
 
@@ -40,8 +40,10 @@ int main(int argc, char *argv[])
 
  cleanup:
 
-  for (unsigned int i = 0; i < v->used; i++) {
-    free(elementInVector(v, i));
+  if (v) {
+    for (unsigned int i = 0; i < v->used; i++) {
+      free(elementInVector(v, i));
+    }
   }
 
   destroyVector(v);
