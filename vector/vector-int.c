@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include "vector-int.h"
 
+// TODO: convert camelCase to under_score
+// TODO: change 'used' to 'length' and 'length' to 'capacity
+
 struct vector* createVector(unsigned int length)
 {
   struct vector *v = malloc(sizeof(struct vector));
@@ -74,7 +77,7 @@ int elementInVector(struct vector *v, unsigned int index) {
   return v->datum[index];
 }
 
-// Does not resize vector
+// TODO: Add resizing of vector
 int deleteFromVector(struct vector *v, unsigned int index) {
   int val = elementInVector(v, index);
 
